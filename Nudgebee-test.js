@@ -1,6 +1,6 @@
 
 //========================================== Q1  ===============================================================
-
+//Ans without throw an error 
 const inputValueNum = [5, -5];
 
 function closestToZero(inputArrayVal) {
@@ -20,6 +20,44 @@ function closestToZero(inputArrayVal) {
 console.log(closestToZero(inputValueNum)); 
 console.log(closestToZero([])); 
 console.log(closestToZero(null)); 
+
+//Ans with throw an error 
+
+function calculateTotalPrice(purchasedPrices, ownerPercentDiscount) {
+    if (purchasedPrices.length === 0) {
+      return 0;
+    }
+  
+    if (ownerPercentDiscount < 0 || ownerPercentDiscount > 100) {
+      throw new Error("Discount percentage must be between 0 and 100");
+    }
+  
+    for (let price of purchasedPrices) {
+      if (price <= 0 || price >= 100000) {
+        throw new Error("Price of a product must be between 1 and 99999");
+      }
+    }
+  
+    if (purchasedPrices.length >= 100) {
+      throw new Error("Number of products must be less than 100");
+    }
+  
+    let totalPrice = purchasedPrices.reduce((acc, curr) => acc + curr, 0);
+  
+    let maxPriceItem = Math.max(...purchasedPrices);
+  
+    let discountedPrice = maxPriceItem - (maxPriceItem * ownerPercentDiscount) / 100;
+  
+    let totalPriceAfterDiscount = totalPrice - maxPriceItem + discountedPrice;
+  
+    return Math.floor(totalPriceAfterDiscount);
+  }
+  
+  const purchasedItemPrice = [50, 30, 70, 1];
+  const ownerDiscount = 20;
+  console.log(calculateTotalPrice(purchasedItemPrice, ownerDiscount));
+  
+
 
 //========================================== Q2  ===============================================================
 
