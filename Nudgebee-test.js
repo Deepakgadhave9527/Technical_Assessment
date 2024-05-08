@@ -1,6 +1,5 @@
 
 //========================================== Q1  ===============================================================
-//Ans without throw an error 
 const inputValueNum = [5, -5];
 
 function closestToZero(inputArrayVal) {
@@ -20,6 +19,8 @@ function closestToZero(inputArrayVal) {
 console.log(closestToZero(inputValueNum)); 
 console.log(closestToZero([])); 
 console.log(closestToZero(null)); 
+
+//========================================== Q2  ===============================================================
 
 //Ans with throw an error 
 
@@ -59,7 +60,7 @@ function calculateTotalPrice(purchasedPrices, ownerPercentDiscount) {
   
 
 
-//========================================== Q2  ===============================================================
+//Ans without throw an error 
 
 function calculateTotalPrice(purchasedPrices, ownerPercentDiscount) {
   if (purchasedPrices.length === 0) {
